@@ -1,0 +1,26 @@
+server:
+  port: ${PORT}
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LGui-santos/ead-config-server-repo
+          default-label: main
+
+encrypt:
+  key: bjcgK8mM44MhBfcjj8F4djZikgC/w4PK/7vlPG2vmO272PLAjJnZky7u4qIHc+TmhRNDDVuZt+rkDEtGivsq2A==
+
+ead:
+  configServer:
+    username: ${CONFIG_SERVER_USERNAME}
+    password: ${CONFIG_SERVER_PASSWORD}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL}
+  instance:
+    hostname: ${APP_DOMAIN_NAME}
+    non-security-port: 80
